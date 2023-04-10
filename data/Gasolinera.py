@@ -31,6 +31,7 @@ class Gasolinera(mongoengine.Document):
         'indexes': [
             {'fields': [('rotulo', 'text'), ('direccion', 'text')], 'weights': {'rotulo': 10, 'direccion': 5},
              'default_language': 'spanish'},
+            {'fields': ['municipio', 'rem']},
             {'fields': ['loc']}
         ]
     }

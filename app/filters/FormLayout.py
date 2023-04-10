@@ -45,5 +45,29 @@ class Layout:
     def get_frame(self):
         return [self.form_frame, self.textbox, None]
 
+    def print_result_on_text(self, gasolineras):
+        self.textbox.delete("0.0", "end")  # delete all text
+        for gasolinera in gasolineras:
+            self.textbox.insert("0.0", "Precio_g9: " + str(gasolinera.precio_g9) + "\n")
+            self.textbox.insert("0.0", "Precio_g8: " + str(gasolinera.precio_g8) + "\n")
+            self.textbox.insert("0.0", "Precio_g7: " + str(gasolinera.precio_g7) + "\n")
+            self.textbox.insert("0.0", "Precio_g6: " + str(gasolinera.precio_g6) + "\n")
+            self.textbox.insert("0.0", "Precio_g5: " + str(gasolinera.precio_g5) + "\n")
+            self.textbox.insert("0.0", "Precio_g4: " + str(gasolinera.precio_g4) + "\n")
+            self.textbox.insert("0.0", "Precio_g3: " + str(gasolinera.precio_g3) + "\n")
+            self.textbox.insert("0.0", "Precio_g2: " + str(gasolinera.precio_g2) + "\n")
+            self.textbox.insert("0.0", "Precio_g1: " + str(gasolinera.precio_g1) + "\n")
+            self.textbox.insert("0.0", "Horario: " + gasolinera.horario + "\n")
+            self.textbox.insert("0.0", "REM: " + gasolinera.rem + "\n")
+            self.textbox.insert("0.0", "Tipo: " + gasolinera.tipo + "\n")
+            self.textbox.insert("0.0", "Margen: " + gasolinera.margen + "\n")
+            self.textbox.insert("0.0", "Dirección: " + gasolinera.direccion + "\n")
+            self.textbox.insert("0.0", "CP: " + str(gasolinera.cp) + "\n")
+            self.textbox.insert("0.0", "Municipio: " + gasolinera.municipio + "\n")
+            self.textbox.insert("0.0", "Provincia: " + gasolinera.provinvia + "\n")
+            self.textbox.insert("0.0", "Rótulo: " + gasolinera.rotulo + "\n")
+            self.textbox.insert("0.0", "Rid: " + str(gasolinera.rid) + "\n")
+            self.textbox.insert("0.0", "\n")
+
     def handle_submit(self):
         pass

@@ -12,3 +12,8 @@ class Form2(Layout):
         self.entry1.configure(placeholder_text="Nombre del Rotulo/Direccion")
         self.entry2.destroy()
         self.entry3.destroy()
+
+    def handle_submit(self):
+        gasolineras = self.dao.db_consultar_gasolineras_por_rotulo_o_direccion(self.entry1.get())
+
+        self.print_result_on_text(gasolineras)

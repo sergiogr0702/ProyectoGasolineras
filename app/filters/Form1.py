@@ -85,7 +85,7 @@ class Form1(Layout):
                                                 text=gasolinera.rotulo)
             self.marker_list.append(marker)
 
-    def print_points_on_text(self, gasolineras):
+    def print_result_on_text(self, gasolineras):
         textbox = self.toplevel_window.getTextbox()
         textbox.delete("0.0", "end")  # delete all text
         for gasolinera in gasolineras:
@@ -126,10 +126,9 @@ class Form1(Layout):
             error_dialog.grab_set()
             return
 
-        print("Valid entry for location search")
         gasolineras = self.dao.db_consultar_gasolineras_por_ubicacion(float(self.entry1.get()),
                                                                       float(self.entry2.get()),
                                                                       int(self.entry3.get()))
 
         self.print_points_on_map(gasolineras)
-        self.print_points_on_text(gasolineras)
+        self.print_result_on_text(gasolineras)
