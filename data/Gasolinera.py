@@ -6,6 +6,7 @@ class Gasolinera(mongoengine.Document):
     rid = mongoengine.LongField(required=True, unique=True)
     provinvia = mongoengine.StringField(required=True)
     municipio = mongoengine.StringField(required=True)
+    localidad = mongoengine.StringField(required=True)
     cp = mongoengine.IntField()
     direccion = mongoengine.StringField(text=True)
     margen = mongoengine.StringField()
@@ -29,9 +30,9 @@ class Gasolinera(mongoengine.Document):
         'db_alias': 'mdad',
         'collection': 'gasolineras',
         'indexes': [
-            {'fields': [('rotulo', 'text'), ('direccion', 'text')], 'weights': {'rotulo': 10, 'direccion': 5},
-             'default_language': 'spanish'},
+            {'fields': ['localidad', 'rotulo']},
             {'fields': ['municipio', 'rem']},
             {'fields': ['loc']}
+
         ]
     }

@@ -16,6 +16,7 @@ def insertData(df):
             direccion=row['Direccion'],
             provinvia=row['Provincia'],
             municipio=row['Municipio'],
+            localidad=row['Localidad'],
             margen=row['Margen'],
             loc=point,
             precio_g1=row['Precio_g1'],

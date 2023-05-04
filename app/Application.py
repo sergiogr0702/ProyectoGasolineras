@@ -36,7 +36,7 @@ class App(ctk.CTk):
         self.sidebar_button_1 = ctk.CTkButton(self.sidebar_frame, text="Coordenadas",
                                               command=self.sidebar_button_event1)
         self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
-        self.sidebar_button_2 = ctk.CTkButton(self.sidebar_frame, text="Rotulo/Direccion",
+        self.sidebar_button_2 = ctk.CTkButton(self.sidebar_frame, text="Localidad&Rótulo",
                                               command=self.sidebar_button_event2)
         self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
         self.sidebar_button_3 = ctk.CTkButton(self.sidebar_frame, text="Municipio&Rem",

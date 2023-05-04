@@ -1,3 +1,4 @@
+from mongoengine import Q
 from data.Gasolinera import Gasolinera
 
 
@@ -11,9 +12,9 @@ class GasolineraDAO:
 
         return sorted(gasolineras, key=lambda g: 0 if g.precio_g1 == 0 else 1)
 
-    def db_consultar_gasolineras_por_rotulo_o_direccion(self, name):
+    def db_consultar_gasolineras_por_localidad_y_rotulo(self, localidad, rotulo):
 
-        gasolineras = Gasolinera.objects().search_text(name).order_by('$text_score')
+        gasolineras = Gasolinera.objects(Q(localidad__icontains=localidad) & Q(rotulo__icontains=rotulo))
 
         return gasolineras
 
